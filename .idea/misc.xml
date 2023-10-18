@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/compare/pom.xml" />
+        <option value="$PROJECT_DIR$/publish/pom.xml" />
+        <option value="$PROJECT_DIR$/intercept/pom.xml" />
+        <option value="$PROJECT_DIR$/flowControl/pom.xml" />
+        <option value="$PROJECT_DIR$/alarm/pom.xml" />
+        <option value="$PROJECT_DIR$/data/pom.xml" />
+        <option value="$PROJECT_DIR$/view/pom.xml" />
+        <option value="$PROJECT_DIR$/log/pom.xml" />
+        <option value="$PROJECT_DIR$/example/pom.xml" />
+        <option value="$PROJECT_DIR$/flowController/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/flowControl/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
