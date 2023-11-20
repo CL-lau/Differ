@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.differ.compare.repository.db.mapper.DatabaseInfoRepository">
+
+    <resultMap id="databaseInfoResultMap" type="com.differ.compare.entity.db.DatabaseInfo">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="url" column="url" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+        <result property="tables" column="tables" typeHandler="com.differ.compare.entity.handler.ListTypeHandler" />
+    </resultMap>
+
+
+    <select id="findAll" resultType="com.differ.compare.entity.db.DatabaseInfo">
+        SELECT * FROM database_info;
+    </select>
+
+    <select id="findById" resultType="com.differ.compare.entity.db.DatabaseInfo" parameterType="java.lang.Long">
+        SELECT * FROM database_info WHERE id = #{id};
+    </select>
+
+    <insert id="save" parameterType="com.differ.compare.entity.db.DatabaseInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO database_info (host, port, name, url, username, password, tables) VALUES (#{host}, #{port}, #{name}, #{url}, #{username}, #{password}, #{tables, typeHandler=com.differ.compare.entity.handler.ListTypeHandler});
+    </insert>
+
+<!--    <insert id="save" parameterType="com.differ.entity.db.DatabaseInfo">-->
+<!--        INSERT INTO database_info (name, url, username, password) VALUES (#{name}, #{url}, #{username}, #{password});-->
+<!--    </insert>-->
+
+    <update id="update" parameterType="com.differ.compare.entity.db.DatabaseInfo">
+        UPDATE database_info
+        <set>
+            <if test="host != null">host = #{host},</if>
+            <if test="port != null">port = #{port},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="username != null">username = #{username},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="tables != null">tables = #{tables, typeHandler=com.differ.compare.entity.handler.ListTypeHandler}</if>
+        </set>
+        WHERE id = #{id};
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM database_info WHERE id = #{id};
+    </delete>
+
+</mapper>

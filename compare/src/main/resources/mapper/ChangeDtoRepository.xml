@@ -1,0 +1,133 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.differ.compare.repository.db.mapper.ChangeDtoRepository">
+
+    <resultMap id="BaseResultMap" type="com.differ.compare.entity.ChangeDto">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="host" property="host" jdbcType="VARCHAR"/>
+        <result column="port" property="port" jdbcType="INTEGER"/>
+        <result column="databaseName" property="databaseName" jdbcType="VARCHAR"/>
+        <result column="tableName" property="tableName" jdbcType="VARCHAR"/>
+        <result column="columnId" property="columnId" jdbcType="INTEGER"/>
+        <result column="columnName" property="columnName" jdbcType="VARCHAR"/>
+        <result column="oldData" property="oldData" jdbcType="VARCHAR"/>
+        <result column="novelData" property="novelData" jdbcType="VARCHAR"/>
+        <result column="dataType" property="dataType" jdbcType="VARCHAR"/>
+        <result column="es" property="es" jdbcType="BIGINT"/>
+        <result column="ts" property="ts" jdbcType="BIGINT"/>
+        <result column="sqlType" property="sqlType" jdbcType="VARCHAR"/>
+        <result column="serviceType" property="serviceType" jdbcType="INTEGER" typeHandler="com.differ.compare.entity.handler.typehandler.ServiceTypeHandler"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, host, port, databaseName, tableName, columnId, columnName, oldData, novelData, dataType, es, ts, sqlType, serviceType
+    </sql>
+
+    <select id="findById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE id = #{id}
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+    </select>
+
+    <select id="findInRangeByESAndTS" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE es BETWEEN #{startES, jdbcType=BIGINT} AND #{endES, jdbcType=BIGINT}
+        AND ts BETWEEN #{startTS, jdbcType=BIGINT} AND #{endTS, jdbcType=BIGINT}
+    </select>
+
+    <select id="findByDatabaseName" resultMap="BaseResultMap" parameterType="string">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE databaseName = #{databaseName, jdbcType=VARCHAR}
+    </select>
+
+    <select id="findByDatabaseNameAndTableName" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE databaseName = #{databaseName, jdbcType=VARCHAR}
+        AND tableName = #{tableName, jdbcType=VARCHAR}
+    </select>
+
+    <select id="findBySqlType" resultMap="BaseResultMap" parameterType="string">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE sqlType = #{sqlType, jdbcType=VARCHAR}
+    </select>
+
+    <select id="findByServiceType" resultMap="BaseResultMap" parameterType="int">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE serviceType = #{serviceType, jdbcType=INTEGER}
+    </select>
+
+    <select id="findByServiceTypeDatabaseNameAndTableName" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM change_dto
+        WHERE serviceType = #{serviceType, jdbcType=INTEGER}
+        AND databaseName = #{databaseName, jdbcType=VARCHAR}
+        AND tableName = #{tableName, jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert" parameterType="com.differ.compare.entity.ChangeDto" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO change_dto
+        (
+        <include refid="Base_Column_List"/>
+        )
+        VALUES
+        (
+        #{id,jdbcType=BIGINT},
+        #{host,jdbcType=VARCHAR},
+        #{port,jdbcType=INTEGER},
+        #{databaseName,jdbcType=VARCHAR},
+        #{tableName,jdbcType=VARCHAR},
+        #{columnId,jdbcType=INTEGER},
+        #{columnName,jdbcType=VARCHAR},
+        #{oldData,jdbcType=VARCHAR},
+        #{novelData,jdbcType=VARCHAR},
+        #{dataType,jdbcType=VARCHAR},
+        #{es,jdbcType=BIGINT},
+        #{ts,jdbcType=BIGINT},
+        #{sqlType,jdbcType=VARCHAR},
+        #{serviceType.code}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.differ.compare.entity.ChangeDto">
+        UPDATE change_dto
+        <set>
+            <if test="host != null">host = #{host,jdbcType=VARCHAR},</if>
+            <if test="port != null">port = #{port,jdbcType=INTEGER},</if>
+            <if test="databaseName != null">databaseName = #{databaseName,jdbcType=VARCHAR},</if>
+            <if test="tableName != null">tableName = #{tableName,jdbcType=VARCHAR},</if>
+            <if test="columnId != null">columnId = #{columnId,jdbcType=INTEGER},</if>
+            <if test="columnName != null">columnName = #{columnName,jdbcType=VARCHAR},</if>
+            <if test="oldData != null">oldData = #{oldData,jdbcType=VARCHAR},</if>
+            <if test="novelData != null">novelData = #{novelData,jdbcType=VARCHAR},</if>
+            <if test="dataType != null">dataType = #{dataType,jdbcType=VARCHAR},</if>
+            <if test="es != null">es = #{es,jdbcType=BIGINT},</if>
+            <if test="ts != null">ts = #{ts,jdbcType=BIGINT},</if>
+            <if test="sqlType != null">sqlType = #{sqlType,jdbcType=VARCHAR},</if>
+            <if test="serviceType != null">serviceType = #{serviceType.code},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM change_dto WHERE id = #{id}
+    </delete>
+</mapper>

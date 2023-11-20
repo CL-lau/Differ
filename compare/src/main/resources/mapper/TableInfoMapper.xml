@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.differ.compare.repository.db.mapper.TableInfoRepository">
+
+    <resultMap id="tableInfoResultMap" type="com.differ.compare.entity.db.TableInfo">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="description" column="description" />
+        <result property="columns" column="columns" typeHandler="com.differ.compare.entity.handler.ListTypeHandler" />
+    </resultMap>
+
+    <select id="findAll" resultType="com.differ.compare.entity.db.TableInfo">
+        SELECT * FROM table_info;
+    </select>
+
+    <select id="findById" resultType="com.differ.compare.entity.db.TableInfo" parameterType="java.lang.Long">
+        SELECT * FROM table_info WHERE id = #{id};
+    </select>
+
+    <insert id="save" parameterType="com.differ.compare.entity.db.TableInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO table_info (name, description, columns)
+        VALUES (#{name}, #{description}, #{columns, jdbcType=OTHER, javaType=java.lang.String, typeHandler=com.differ.compare.entity.handler.ListTypeHandler});
+    </insert>
+
+    <update id="update" parameterType="com.differ.compare.entity.db.TableInfo">
+        UPDATE table_info
+        SET name = #{name},
+            description = #{description},
+            columns = #{columns, jdbcType=OTHER, javaType=java.lang.String, typeHandler=com.differ.compare.entity.handler.ListTypeHandler}
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="columns != null">columns = #{columns, typeHandler=com.differ.compare.entity.handler.ListTypeHandler}</if>
+        </set>
+        WHERE id = #{id};
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM table_info WHERE id = #{id};
+    </delete>
+
+</mapper>
