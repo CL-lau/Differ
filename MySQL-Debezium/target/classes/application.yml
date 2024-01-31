@@ -1,0 +1,18 @@
+server:
+  port: 8888
+debezium:
+  database:
+    - name: differ
+      enabled: true
+      serverId: 122
+      host: 127.0.0.1
+      port: 3306
+      username: root
+      password: root
+      offset-path: Users/liuc8/Desktop/offset.dat
+      history-path: Users/liuc8/Desktop/dbhistory.dat
+#      offset-path: debezium/qm/offset.dat
+#      history-path: debezium/qm/dbhistory.dat
+      table:
+        - differ.user
+        - differ.userlogin

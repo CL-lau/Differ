@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.differ.repository.mapper.UserLoginMapper">
+    <select id="queryAll" resultType="com.differ.entity.UserLogin">
+        select * from userLogin
+    </select>
+
+    <insert id="add" parameterType="com.differ.entity.UserLogin">
+        insert into userLogin values (#{username},#{password})
+    </insert>
+
+    <select id="queryByName" resultType="com.differ.entity.UserLogin">
+        select * from userLogin where username = #{username}
+    </select>
+
+</mapper>

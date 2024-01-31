@@ -1,0 +1,30 @@
+@startuml
+
+participant User as U
+participant RequestControl as RC
+participant TrafficControl as TC
+participant DataComparison as DC
+participant LogModule as LM
+participant Database as DB
+participant DiffAlgorithm as DA
+
+U -> RC: 发起diff测试请求
+RC -> RC: 初始化请求设置
+RC -> TC: 请求转发请求
+TC -> TC: 判断流量是否需要转发
+TC -> RC: 返回转发决策
+RC -> RC: 根据转发决策执行转发或阻止
+RC -> DC: 对比转发结果与数据库内容（如需转发）
+DC -> DB: 获取数据库内容（如需转发）
+DC -> DA: 执行diff算法（如需转发）
+DA -> DA: 识别差异（如需转发）
+DA -> DC: 返回差异结果（如需转发）
+DC -> RC: 返回对比结果（如需转发）
+RC -> LM: 记录diff测试日志
+RC -> U: 返回diff测试结果
+TC -> LM: 异常处理/日志
+DC -> LM: 异常处理/日志
+LM -> LM: 打点，统计测试结果
+LM -> U: 发送异常通知
+
+@enduml

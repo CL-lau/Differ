@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.differ.repository.mapper.HttpServiceEntityMapper">
+
+    <resultMap id="httpServiceEntityResultMap" type="com.differ.entity.service.http.HttpServiceEntity">
+        <id property="id" column="id" />
+        <result property="serviceType" column="service_type" typeHandler="com.differ.entity.handler.typehandler.ServiceTypeHandler"/>
+        <association property="httpRequest" javaType="com.differ.entity.request.HttpRequest">
+            <result property="host" column="host" />
+            <result property="port" column="port" />
+            <result property="baseUri" column="base_uri" />
+            <result property="requestUri" column="request_uri" />
+            <result property="requestType" column="request_type" typeHandler="com.differ.entity.handler.typehandler.RequestTypeHandler"/>
+            <result property="headersMap" column="headers_map" typeHandler="com.differ.entity.handler.typehandler.MapTypeHandler"/>
+            <result property="params" column="params" typeHandler="com.differ.entity.handler.typehandler.MapTypeHandler"/>
+            <result property="bodyType" column="body_type" typeHandler="com.differ.entity.handler.typehandler.BodyTypeHandler"/>
+        </association>
+    </resultMap>
+
+    <select id="selectHttpServiceEntityById" resultMap="httpServiceEntityResultMap">
+        SELECT * FROM http_service_entity WHERE id = #{id}
+    </select>
+
+    <select id="selectAllHttpServiceEntities" resultMap="httpServiceEntityResultMap">
+        SELECT * FROM http_service_entity
+    </select>
+
+    <insert id="insertHttpServiceEntity">
+        INSERT INTO http_service_entity (id, host, port, base_uri, request_uri, request_type, headers_map, params, body_type, service_type)
+        VALUES (#{id}, #{httpRequest.host}, #{httpRequest.port}, #{httpRequest.baseUri}, #{httpRequest.requestUri}, #{httpRequest.requestType.code}, #{httpRequest.headersMap, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler}, #{httpRequest.params, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler}, #{httpRequest.bodyType.code}, #{serviceType.code})
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <update id="updateHttpServiceEntity">
+        UPDATE http_service_entity
+        <set>
+            <if test="httpRequest.host != null">host = #{httpRequest.host},</if>
+            <if test="httpRequest.port != null">port = #{httpRequest.port},</if>
+            <if test="httpRequest.baseUri != null">base_uri = #{httpRequest.baseUri},</if>
+            <if test="httpRequest.requestUri != null">request_uri = #{httpRequest.requestUri},</if>
+            <if test="httpRequest.requestType.code != null">code = #{httpRequest.requestType.code},</if>
+            <if test="httpRequest.headersMap != null">headers_map = #{httpRequest.headersMap, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler},</if>
+            <if test="httpRequest.params != null">params = #{httpRequest.params, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler},</if>
+            <if test="httpRequest.bodyType.code != null">code = #{httpRequest.bodyType.code},</if>
+            <if test="service_type != null">service_type = #{service_type},</if>
+            utime = NOW()
+        </set>
+<!--        SET host = #{httpRequest.host},-->
+<!--        port = #{httpRequest.port},-->
+<!--        base_uri = #{httpRequest.baseUri},-->
+<!--        request_uri = #{httpRequest.requestUri},-->
+<!--        request_type = #{httpRequest.requestType.code},-->
+<!--        headers_map = #{httpRequest.headersMap, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler},-->
+<!--        params = #{httpRequest.params, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler},-->
+<!--        body_type = #{httpRequest.bodyType.code},-->
+<!--        service_type = #{serviceType.code}-->
+<!--        WHERE id = #{id}-->
+    </update>
+
+    <delete id="deleteHttpServiceEntityById">
+        DELETE FROM http_service_entity WHERE id = #{id}
+    </delete>
+</mapper>

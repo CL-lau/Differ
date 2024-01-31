@@ -1,0 +1,22 @@
+@startuml
+
+participant RequestMonitor as RM
+participant ThresholdManager as TM
+participant TrafficControlStrategy as TCS
+participant FeedbackModule as FM
+participant DistributedCollaborator as DC
+
+RM -> RM: 监测请求次数
+RM -> TM: 获取请求次数阈值
+RM -> RM: 判断请求次数是否超过阈值
+alt 超过阈值
+    RM -> TCS: 执行流量控制策略
+    TCS -> TCS: 选择合适的策略进行处理
+    TCS -> FM: 记录流量控制情况
+    FM -> FM: 发送反馈和调整建议
+    RM -> DC: 分布式协作请求处理（如需）
+else 未超过阈值
+    RM -> RM: 正常处理请求
+end
+
+@enduml

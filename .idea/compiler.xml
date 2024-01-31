@@ -2,23 +2,33 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="flowController" />
-        <module name="compare" />
         <module name="view" />
+        <module name="compare" />
         <module name="data" />
         <module name="log" />
+        <module name="debezium" />
         <module name="intercept" />
         <module name="publish" />
         <module name="alarm" />
+        <module name="DebeziumTest" />
         <module name="example" />
+        <module name="Listener-MySQL-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="debeziumUtil" target="1.5" />
       <module name="flowControl" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Listener-MySQL-service" options="-parameters" />
+    </option>
   </component>
 </project>

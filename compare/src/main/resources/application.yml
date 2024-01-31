@@ -1,0 +1,54 @@
+#logging:
+#  level:
+#    root: error
+
+redis:
+  time:
+    changeDto:
+      expire:
+      minExpire: 30
+      maxExpire: 60
+    databaseInfo:
+      expire:
+      minExpire: 10
+      maxExpire: 60
+
+influxdb:
+  url: http://localhost:8086
+  token: 8fHXe2ZEX7ZNgMO7Kdi4H-OoXy846_WgbQKRtAOKncl7IV_WdxjHrBgH8fj-o6MNH_Hs-vggtaVeqR-IvAGrZQ==
+  org: test
+  bucket: DB_Change
+
+spring:
+  application:
+    name: differ-compare
+  datasource:
+    url: jdbc:mysql://localhost:3306/differ?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8mb4
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: root
+
+server:
+  port: 8889
+debezium:
+  database:
+    - name: differ
+      enabled: true
+      serverId: 1234
+      host: 127.0.0.1
+      port: 3306
+      username: root
+      password: root
+      offset-path: Users/liuc8/Desktop/offsets.dat
+      history-path: Users/liuc8/Desktop/dbhistorys.dat
+      #      offset-path: debezium/qm/offset.dat
+      #      history-path: debezium/qm/dbhistory.dat
+      table:
+        - differ.user
+        - differ.userlogin
+

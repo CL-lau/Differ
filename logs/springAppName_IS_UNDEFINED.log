@@ -1,0 +1,371 @@
+2023-11-06 10:06:13.518 INFO  main [com.ryan.debezium.Application:?]-Starting Application on DESKTOP-CGPPAP1 with PID 13828 (C:\Users\liuc8\Desktop\Differ\MySQL-Debezium\target\classes started by liuc8 in C:\Users\liuc8\Desktop\Differ)
+2023-11-06 10:06:13.520 INFO  main [com.ryan.debezium.Application:?]-No active profile set, falling back to default profiles: default
+2023-11-06 10:06:14.363 INFO  main [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?]-Tomcat initialized with port(s): 8888 (http)
+2023-11-06 10:06:14.372 INFO  main [org.apache.catalina.core.StandardService:?]-Starting service [Tomcat]
+2023-11-06 10:06:14.373 INFO  main [org.apache.catalina.core.StandardEngine:?]-Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-11-06 10:06:14.473 INFO  main [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?]-Initializing Spring embedded WebApplicationContext
+2023-11-06 10:06:14.473 INFO  main [org.springframework.web.context.ContextLoader:?]-Root WebApplicationContext: initialization completed in 903 ms
+2023-11-06 10:06:15.150 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:06:15.153 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+2023-11-06 10:06:15.160 INFO  main [io.debezium.embedded.EmbeddedEngine$EmbeddedConfig:?]-EmbeddedConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	config.providers = []
+	connector.client.config.override.policy = None
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	listeners = null
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 600000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = C:/Users/liuc8/Desktop/offset.dat
+	offset.storage.partitions = null
+	offset.storage.replication.factor = null
+	offset.storage.topic = 
+	plugin.path = null
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	rest.host.name = null
+	rest.port = 8083
+	ssl.client.auth = none
+	task.shutdown.graceful.timeout.ms = 5000
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+
+2023-11-06 10:06:15.160 INFO  main [org.apache.kafka.connect.runtime.WorkerConfig:?]-Worker configuration property 'internal.key.converter' is deprecated and may be removed in an upcoming release. The specified value 'org.apache.kafka.connect.json.JsonConverter' matches the default, so this property can be safely removed from the worker configuration.
+2023-11-06 10:06:15.237 INFO  main [org.apache.kafka.connect.runtime.WorkerConfig:?]-Worker configuration property 'internal.value.converter' is deprecated and may be removed in an upcoming release. The specified value 'org.apache.kafka.connect.json.JsonConverter' matches the default, so this property can be safely removed from the worker configuration.
+2023-11-06 10:06:15.239 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:06:15.240 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:06:15.668 INFO  pool-2-thread-1 [org.apache.kafka.connect.storage.FileOffsetBackingStore:?]-Starting FileOffsetBackingStore with file C:\Users\liuc8\Desktop\offset.dat
+2023-11-06 10:06:15.751 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Starting MySqlConnectorTask with configuration:
+2023-11-06 10:06:15.751 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   connector.class = io.debezium.connector.mysql.MySqlConnector
+2023-11-06 10:06:15.751 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.history.file.filename = C:/Users/liuc8/Desktop/dbhistory.dat
+2023-11-06 10:06:15.751 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.user = root
+2023-11-06 10:06:15.751 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.storage = org.apache.kafka.connect.storage.FileOffsetBackingStore
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.server.id = 122
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.server.name = my_mysql_connectordiffer
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.flush.timeout.ms = 5000
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.port = 3306
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.flush.interval.ms = 600000
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   internal.key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.storage.file.filename = C:/Users/liuc8/Desktop/offset.dat
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.serverTimezone = UTC
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.hostname = 127.0.0.1
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.password = ********
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   name = differ
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   internal.value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   table.include.list = differ.user,differ.userlogin
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:15.752 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.history = io.debezium.relational.history.FileDatabaseHistory
+2023-11-06 10:06:15.785 INFO  main [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?]-Initializing ExecutorService 'applicationTaskExecutor'
+2023-11-06 10:06:15.808 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnection:?]-Database configuration option 'serverTimezone' is set but is obsolete, please use 'connectionTimeZone' instead
+2023-11-06 10:06:16.066 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Found previous partition offset MySqlPartition [sourcePartition={server=my_mysql_connectordiffer}]: {transaction_id=null, file=DESKTOP-CGPPAP1-bin.000015, pos=5330, row=1, event=2}
+2023-11-06 10:06:16.136 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-Closing connection before starting schema recovery
+2023-11-06 10:06:16.145 INFO  pool-4-thread-1 [io.debezium.jdbc.JdbcConnection:?]-Connection gracefully closed
+2023-11-06 10:06:16.146 INFO  pool-2-thread-1 [io.debezium.relational.history.DatabaseHistoryMetrics:?]-Started database history recovery
+2023-11-06 10:06:16.371 INFO  main [org.apache.catalina.core.StandardService:?]-Stopping service [Tomcat]
+2023-11-06 10:06:16.377 INFO  main [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:?]-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-11-06 10:06:16.385 INFO  main [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?]-Shutting down ExecutorService 'applicationTaskExecutor'
+2023-11-06 10:06:16.386 INFO  main [io.debezium.embedded.EmbeddedEngine:?]-Stopping the embedded engine
+2023-11-06 10:06:16.386 INFO  main [io.debezium.embedded.EmbeddedEngine:?]-Waiting for PT5M for connector to stop
+2023-11-06 10:06:16.714 INFO  pool-2-thread-1 [io.debezium.relational.history.DatabaseHistoryMetrics:?]-Finished database history recovery of 16 change(s) in 567 ms
+2023-11-06 10:06:16.724 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:16.724 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: name VARCHAR(10) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:16.725 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:16.725 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: sex CHAR(6) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:16.725 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:16.725 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: pwd VARCHAR(20) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:16.726 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:16.726 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: email VARCHAR(20) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:16.728 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-Reconnecting after finishing schema recovery
+2023-11-06 10:06:16.732 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnection:?]-Get all known binlogs from MySQL
+2023-11-06 10:06:16.740 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-MySQL has the binlog file 'DESKTOP-CGPPAP1-bin.000015' required by the connector
+2023-11-06 10:06:16.770 INFO  pool-2-thread-1 [io.debezium.util.Threads:?]-Requested thread factory for connector MySqlConnector, id = my_mysql_connectordiffer named = change-event-source-coordinator
+2023-11-06 10:06:16.772 INFO  pool-2-thread-1 [io.debezium.util.Threads:?]-Creating thread debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator
+2023-11-06 10:06:16.773 INFO  pool-2-thread-1 [io.debezium.embedded.EmbeddedEngine:?]-Stopping the task and engine
+2023-11-06 10:06:16.773 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Stopping down connector
+2023-11-06 10:06:16.775 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Metrics registered
+2023-11-06 10:06:16.775 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Context created
+2023-11-06 10:06:16.780 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlSnapshotChangeEventSource:?]-A previous offset indicating a completed snapshot has been found. Neither schema nor data will be snapshotted.
+2023-11-06 10:06:16.781 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Snapshot ended with SnapshotResult [status=SKIPPED, offset=MySqlOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.mysql.Source:STRUCT}, sourceInfo=SourceInfo [currentGtid=null, currentBinlogFilename=DESKTOP-CGPPAP1-bin.000015, currentBinlogPosition=5330, currentRowNumber=0, serverId=0, sourceTime=null, threadId=-1, currentQuery=null, tableIds=[], databaseName=null], snapshotCompleted=false, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], restartGtidSet=null, currentGtidSet=null, restartBinlogFilename=DESKTOP-CGPPAP1-bin.000015, restartBinlogPosition=5330, restartRowsToSkip=1, restartEventsToSkip=2, currentEventLengthInBytes=0, inTransaction=false, transactionId=null, incrementalSnapshotContext =IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]]
+2023-11-06 10:06:16.782 INFO  pool-6-thread-1 [io.debezium.jdbc.JdbcConnection:?]-Connection gracefully closed
+2023-11-06 10:06:16.783 INFO  pool-2-thread-1 [org.apache.kafka.connect.storage.FileOffsetBackingStore:?]-Stopped FileOffsetBackingStore
+2023-11-06 10:06:56.270 INFO  main [com.ryan.debezium.Application:?]-Starting Application on DESKTOP-CGPPAP1 with PID 7312 (C:\Users\liuc8\Desktop\Differ\MySQL-Debezium\target\classes started by liuc8 in C:\Users\liuc8\Desktop\Differ)
+2023-11-06 10:06:56.272 INFO  main [com.ryan.debezium.Application:?]-No active profile set, falling back to default profiles: default
+2023-11-06 10:06:57.086 INFO  main [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?]-Tomcat initialized with port(s): 8888 (http)
+2023-11-06 10:06:57.096 INFO  main [org.apache.catalina.core.StandardService:?]-Starting service [Tomcat]
+2023-11-06 10:06:57.096 INFO  main [org.apache.catalina.core.StandardEngine:?]-Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-11-06 10:06:57.205 INFO  main [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?]-Initializing Spring embedded WebApplicationContext
+2023-11-06 10:06:57.205 INFO  main [org.springframework.web.context.ContextLoader:?]-Root WebApplicationContext: initialization completed in 894 ms
+2023-11-06 10:06:57.309 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:06:57.312 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+2023-11-06 10:06:57.318 INFO  main [io.debezium.embedded.EmbeddedEngine$EmbeddedConfig:?]-EmbeddedConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	config.providers = []
+	connector.client.config.override.policy = None
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	listeners = null
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 600000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = C:/Users/liuc8/Desktop/offset.dat
+	offset.storage.partitions = null
+	offset.storage.replication.factor = null
+	offset.storage.topic = 
+	plugin.path = null
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	rest.host.name = null
+	rest.port = 8083
+	ssl.client.auth = none
+	task.shutdown.graceful.timeout.ms = 5000
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+
+2023-11-06 10:06:57.318 INFO  main [org.apache.kafka.connect.runtime.WorkerConfig:?]-Worker configuration property 'internal.key.converter' is deprecated and may be removed in an upcoming release. The specified value 'org.apache.kafka.connect.json.JsonConverter' matches the default, so this property can be safely removed from the worker configuration.
+2023-11-06 10:06:57.319 INFO  main [org.apache.kafka.connect.runtime.WorkerConfig:?]-Worker configuration property 'internal.value.converter' is deprecated and may be removed in an upcoming release. The specified value 'org.apache.kafka.connect.json.JsonConverter' matches the default, so this property can be safely removed from the worker configuration.
+2023-11-06 10:06:57.320 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:06:57.321 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:06:57.332 INFO  pool-2-thread-1 [org.apache.kafka.connect.storage.FileOffsetBackingStore:?]-Starting FileOffsetBackingStore with file C:\Users\liuc8\Desktop\offset.dat
+2023-11-06 10:06:57.388 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Starting MySqlConnectorTask with configuration:
+2023-11-06 10:06:57.389 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   connector.class = io.debezium.connector.mysql.MySqlConnector
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.history.file.filename = C:/Users/liuc8/Desktop/dbhistory.dat
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.user = root
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.storage = org.apache.kafka.connect.storage.FileOffsetBackingStore
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.server.id = 122
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.server.name = my_mysql_connectordiffer
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.flush.timeout.ms = 5000
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.port = 3306
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.flush.interval.ms = 600000
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   internal.key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.storage.file.filename = C:/Users/liuc8/Desktop/offset.dat
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.serverTimezone = UTC
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.hostname = 127.0.0.1
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.password = ********
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   name = differ
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   internal.value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   table.include.list = differ.user,differ.userlogin
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:06:57.390 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.history = io.debezium.relational.history.FileDatabaseHistory
+2023-11-06 10:06:57.430 INFO  main [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?]-Initializing ExecutorService 'applicationTaskExecutor'
+2023-11-06 10:06:57.440 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnection:?]-Database configuration option 'serverTimezone' is set but is obsolete, please use 'connectionTimeZone' instead
+2023-11-06 10:06:57.640 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Found previous partition offset MySqlPartition [sourcePartition={server=my_mysql_connectordiffer}]: {transaction_id=null, file=DESKTOP-CGPPAP1-bin.000015, pos=5330, row=1, event=2}
+2023-11-06 10:06:57.699 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-Closing connection before starting schema recovery
+2023-11-06 10:06:57.704 INFO  pool-4-thread-1 [io.debezium.jdbc.JdbcConnection:?]-Connection gracefully closed
+2023-11-06 10:06:57.706 INFO  pool-2-thread-1 [io.debezium.relational.history.DatabaseHistoryMetrics:?]-Started database history recovery
+2023-11-06 10:06:57.863 INFO  main [org.apache.catalina.core.StandardService:?]-Stopping service [Tomcat]
+2023-11-06 10:06:57.871 INFO  main [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:?]-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-11-06 10:06:57.881 INFO  main [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?]-Shutting down ExecutorService 'applicationTaskExecutor'
+2023-11-06 10:06:57.881 INFO  main [io.debezium.embedded.EmbeddedEngine:?]-Stopping the embedded engine
+2023-11-06 10:06:57.882 INFO  main [io.debezium.embedded.EmbeddedEngine:?]-Waiting for PT5M for connector to stop
+2023-11-06 10:06:58.231 INFO  pool-2-thread-1 [io.debezium.relational.history.DatabaseHistoryMetrics:?]-Finished database history recovery of 16 change(s) in 525 ms
+2023-11-06 10:06:58.239 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:58.239 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: name VARCHAR(10) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:58.240 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:58.240 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: sex CHAR(6) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:58.240 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:58.240 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: pwd VARCHAR(20) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:58.240 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:06:58.240 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: email VARCHAR(20) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:06:58.242 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-Reconnecting after finishing schema recovery
+2023-11-06 10:06:58.245 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnection:?]-Get all known binlogs from MySQL
+2023-11-06 10:06:58.247 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-MySQL has the binlog file 'DESKTOP-CGPPAP1-bin.000015' required by the connector
+2023-11-06 10:06:58.278 INFO  pool-2-thread-1 [io.debezium.util.Threads:?]-Requested thread factory for connector MySqlConnector, id = my_mysql_connectordiffer named = change-event-source-coordinator
+2023-11-06 10:06:58.280 INFO  pool-2-thread-1 [io.debezium.util.Threads:?]-Creating thread debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator
+2023-11-06 10:06:58.281 INFO  pool-2-thread-1 [io.debezium.embedded.EmbeddedEngine:?]-Stopping the task and engine
+2023-11-06 10:06:58.281 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Stopping down connector
+2023-11-06 10:06:58.283 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Metrics registered
+2023-11-06 10:06:58.283 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Context created
+2023-11-06 10:06:58.287 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlSnapshotChangeEventSource:?]-A previous offset indicating a completed snapshot has been found. Neither schema nor data will be snapshotted.
+2023-11-06 10:06:58.288 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Snapshot ended with SnapshotResult [status=SKIPPED, offset=MySqlOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.mysql.Source:STRUCT}, sourceInfo=SourceInfo [currentGtid=null, currentBinlogFilename=DESKTOP-CGPPAP1-bin.000015, currentBinlogPosition=5330, currentRowNumber=0, serverId=0, sourceTime=null, threadId=-1, currentQuery=null, tableIds=[], databaseName=null], snapshotCompleted=false, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], restartGtidSet=null, currentGtidSet=null, restartBinlogFilename=DESKTOP-CGPPAP1-bin.000015, restartBinlogPosition=5330, restartRowsToSkip=1, restartEventsToSkip=2, currentEventLengthInBytes=0, inTransaction=false, transactionId=null, incrementalSnapshotContext =IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]]
+2023-11-06 10:06:58.290 INFO  pool-6-thread-1 [io.debezium.jdbc.JdbcConnection:?]-Connection gracefully closed
+2023-11-06 10:06:58.291 INFO  pool-2-thread-1 [org.apache.kafka.connect.storage.FileOffsetBackingStore:?]-Stopped FileOffsetBackingStore
+2023-11-06 10:07:16.133 INFO  main [com.ryan.debezium.Application:?]-Starting Application on DESKTOP-CGPPAP1 with PID 3888 (C:\Users\liuc8\Desktop\Differ\MySQL-Debezium\target\classes started by liuc8 in C:\Users\liuc8\Desktop\Differ)
+2023-11-06 10:07:16.135 INFO  main [com.ryan.debezium.Application:?]-No active profile set, falling back to default profiles: default
+2023-11-06 10:07:16.992 INFO  main [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?]-Tomcat initialized with port(s): 8888 (http)
+2023-11-06 10:07:17.002 INFO  main [org.apache.catalina.core.StandardService:?]-Starting service [Tomcat]
+2023-11-06 10:07:17.002 INFO  main [org.apache.catalina.core.StandardEngine:?]-Starting Servlet engine: [Apache Tomcat/9.0.33]
+2023-11-06 10:07:17.099 INFO  main [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?]-Initializing Spring embedded WebApplicationContext
+2023-11-06 10:07:17.099 INFO  main [org.springframework.web.context.ContextLoader:?]-Root WebApplicationContext: initialization completed in 916 ms
+2023-11-06 10:07:17.198 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:07:17.201 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+2023-11-06 10:07:17.205 INFO  main [io.debezium.embedded.EmbeddedEngine$EmbeddedConfig:?]-EmbeddedConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	config.providers = []
+	connector.client.config.override.policy = None
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	listeners = null
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 600000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = C:/Users/liuc8/Desktop/offset.dat
+	offset.storage.partitions = null
+	offset.storage.replication.factor = null
+	offset.storage.topic = 
+	plugin.path = null
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	rest.host.name = null
+	rest.port = 8083
+	ssl.client.auth = none
+	task.shutdown.graceful.timeout.ms = 5000
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+
+2023-11-06 10:07:17.205 INFO  main [org.apache.kafka.connect.runtime.WorkerConfig:?]-Worker configuration property 'internal.key.converter' is deprecated and may be removed in an upcoming release. The specified value 'org.apache.kafka.connect.json.JsonConverter' matches the default, so this property can be safely removed from the worker configuration.
+2023-11-06 10:07:17.207 INFO  main [org.apache.kafka.connect.runtime.WorkerConfig:?]-Worker configuration property 'internal.value.converter' is deprecated and may be removed in an upcoming release. The specified value 'org.apache.kafka.connect.json.JsonConverter' matches the default, so this property can be safely removed from the worker configuration.
+2023-11-06 10:07:17.208 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:07:17.209 INFO  main [org.apache.kafka.connect.json.JsonConverterConfig:?]-JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2023-11-06 10:07:17.220 INFO  pool-2-thread-1 [org.apache.kafka.connect.storage.FileOffsetBackingStore:?]-Starting FileOffsetBackingStore with file C:\Users\liuc8\Desktop\offset.dat
+2023-11-06 10:07:17.286 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Starting MySqlConnectorTask with configuration:
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   connector.class = io.debezium.connector.mysql.MySqlConnector
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.history.file.filename = C:/Users/liuc8/Desktop/dbhistory.dat
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.user = root
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.storage = org.apache.kafka.connect.storage.FileOffsetBackingStore
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.server.id = 122
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.server.name = my_mysql_connectordiffer
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.flush.timeout.ms = 5000
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.port = 3306
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.flush.interval.ms = 600000
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   internal.key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   offset.storage.file.filename = C:/Users/liuc8/Desktop/offset.dat
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.serverTimezone = UTC
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.hostname = 127.0.0.1
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.password = ********
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   name = differ
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   internal.value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   table.include.list = differ.user,differ.userlogin
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-11-06 10:07:17.287 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-   database.history = io.debezium.relational.history.FileDatabaseHistory
+2023-11-06 10:07:17.333 INFO  main [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?]-Initializing ExecutorService 'applicationTaskExecutor'
+2023-11-06 10:07:17.340 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnection:?]-Database configuration option 'serverTimezone' is set but is obsolete, please use 'connectionTimeZone' instead
+2023-11-06 10:07:17.552 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Found previous partition offset MySqlPartition [sourcePartition={server=my_mysql_connectordiffer}]: {transaction_id=null, file=DESKTOP-CGPPAP1-bin.000015, pos=5330, row=1, event=2}
+2023-11-06 10:07:17.617 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-Closing connection before starting schema recovery
+2023-11-06 10:07:17.622 INFO  pool-4-thread-1 [io.debezium.jdbc.JdbcConnection:?]-Connection gracefully closed
+2023-11-06 10:07:17.624 INFO  pool-2-thread-1 [io.debezium.relational.history.DatabaseHistoryMetrics:?]-Started database history recovery
+2023-11-06 10:07:17.807 INFO  main [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?]-Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-06 10:07:17.809 INFO  main [com.ryan.debezium.Application:?]-Started Application in 2.147 seconds (JVM running for 2.854)
+2023-11-06 10:07:18.131 INFO  pool-2-thread-1 [io.debezium.relational.history.DatabaseHistoryMetrics:?]-Finished database history recovery of 16 change(s) in 506 ms
+2023-11-06 10:07:18.142 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: name VARCHAR(10) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: sex CHAR(6) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: pwd VARCHAR(20) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Column uses MySQL character set 'utf8mb3', which has no mapping to a Java character set
+2023-11-06 10:07:18.143 WARN  pool-2-thread-1 [io.debezium.connector.mysql.MySqlValueConverters:?]-Using UTF-8 charset by default for column without charset: email VARCHAR(20) CHARSET utf8mb3 DEFAULT VALUE NULL
+2023-11-06 10:07:18.144 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-Reconnecting after finishing schema recovery
+2023-11-06 10:07:18.148 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnection:?]-Get all known binlogs from MySQL
+2023-11-06 10:07:18.150 INFO  pool-2-thread-1 [io.debezium.connector.mysql.MySqlConnectorTask:?]-MySQL has the binlog file 'DESKTOP-CGPPAP1-bin.000015' required by the connector
+2023-11-06 10:07:18.194 INFO  pool-2-thread-1 [io.debezium.util.Threads:?]-Requested thread factory for connector MySqlConnector, id = my_mysql_connectordiffer named = change-event-source-coordinator
+2023-11-06 10:07:18.196 INFO  pool-2-thread-1 [io.debezium.util.Threads:?]-Creating thread debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator
+2023-11-06 10:07:18.199 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Metrics registered
+2023-11-06 10:07:18.199 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Context created
+2023-11-06 10:07:18.203 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlSnapshotChangeEventSource:?]-A previous offset indicating a completed snapshot has been found. Neither schema nor data will be snapshotted.
+2023-11-06 10:07:18.204 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Snapshot ended with SnapshotResult [status=SKIPPED, offset=MySqlOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.mysql.Source:STRUCT}, sourceInfo=SourceInfo [currentGtid=null, currentBinlogFilename=DESKTOP-CGPPAP1-bin.000015, currentBinlogPosition=5330, currentRowNumber=0, serverId=0, sourceTime=null, threadId=-1, currentQuery=null, tableIds=[], databaseName=null], snapshotCompleted=false, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], restartGtidSet=null, currentGtidSet=null, restartBinlogFilename=DESKTOP-CGPPAP1-bin.000015, restartBinlogPosition=5330, restartRowsToSkip=1, restartEventsToSkip=2, currentEventLengthInBytes=0, inTransaction=false, transactionId=null, incrementalSnapshotContext =IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]]
+2023-11-06 10:07:18.207 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.util.Threads:?]-Requested thread factory for connector MySqlConnector, id = my_mysql_connectordiffer named = binlog-client
+2023-11-06 10:07:18.210 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Starting streaming
+2023-11-06 10:07:18.217 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlStreamingChangeEventSource:?]-Skip 2 events on streaming start
+2023-11-06 10:07:18.217 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlStreamingChangeEventSource:?]-Skip 1 rows on streaming start
+2023-11-06 10:07:18.217 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.util.Threads:?]-Creating thread debezium-mysqlconnector-my_mysql_connectordiffer-binlog-client
+2023-11-06 10:07:18.220 INFO  blc-127.0.0.1:3306 [io.debezium.util.Threads:?]-Creating thread debezium-mysqlconnector-my_mysql_connectordiffer-binlog-client
+2023-11-06 10:07:18.227 INFO  blc-127.0.0.1:3306 [com.github.shyiko.mysql.binlog.BinaryLogClient:?]-Connected to 127.0.0.1:3306 at DESKTOP-CGPPAP1-bin.000015/5330 (sid:122, cid:409)
+2023-11-06 10:07:18.227 INFO  blc-127.0.0.1:3306 [io.debezium.connector.mysql.MySqlStreamingChangeEventSource:?]-Connected to MySQL binlog at 127.0.0.1:3306, starting at MySqlOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.mysql.Source:STRUCT}, sourceInfo=SourceInfo [currentGtid=null, currentBinlogFilename=DESKTOP-CGPPAP1-bin.000015, currentBinlogPosition=5330, currentRowNumber=0, serverId=0, sourceTime=null, threadId=-1, currentQuery=null, tableIds=[], databaseName=null], snapshotCompleted=false, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], restartGtidSet=null, currentGtidSet=null, restartBinlogFilename=DESKTOP-CGPPAP1-bin.000015, restartBinlogPosition=5330, restartRowsToSkip=1, restartEventsToSkip=2, currentEventLengthInBytes=0, inTransaction=false, transactionId=null, incrementalSnapshotContext =IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]
+2023-11-06 10:07:18.228 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlStreamingChangeEventSource:?]-Waiting for keepalive thread to start
+2023-11-06 10:07:18.228 INFO  blc-127.0.0.1:3306 [io.debezium.util.Threads:?]-Creating thread debezium-mysqlconnector-my_mysql_connectordiffer-binlog-client
+2023-11-06 10:07:18.330 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.connector.mysql.MySqlStreamingChangeEventSource:?]-Keepalive thread is running
+2023-11-06 10:07:18.929 INFO  pool-2-thread-1 [com.ryan.debezium.listener.MysqlListener:?]-【Debezium-null】Message(data={sex=test, name=test, id=8, pwd=test, email=aa嗷嗷是}, dbType=Mysql, handleType=UPDATE, database=differ, table=user)
+2023-11-06 10:07:18.932 INFO  pool-2-thread-1 [com.ryan.debezium.listener.MysqlListener:?]-【Debezium-null】Message(data={sex=21, name=请求, id=9, pwd=213, email=1}, dbType=Mysql, handleType=UPDATE, database=differ, table=user)
+2023-11-06 10:07:18.934 INFO  pool-2-thread-1 [com.ryan.debezium.listener.MysqlListener:?]-【Debezium-null】Message(data={sex=21, name=请求, id=9, pwd=213, email=12}, dbType=Mysql, handleType=UPDATE, database=differ, table=user)
+2023-11-06 10:12:20.424 INFO  SpringContextShutdownHook [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?]-Shutting down ExecutorService 'applicationTaskExecutor'
+2023-11-06 10:12:20.424 INFO  SpringContextShutdownHook [io.debezium.embedded.EmbeddedEngine:?]-Stopping the embedded engine
+2023-11-06 10:12:20.424 INFO  SpringContextShutdownHook [io.debezium.embedded.EmbeddedEngine:?]-Waiting for PT5M for connector to stop
+2023-11-06 10:12:20.453 INFO  pool-2-thread-1 [io.debezium.embedded.EmbeddedEngine:?]-Stopping the task and engine
+2023-11-06 10:12:20.453 INFO  pool-2-thread-1 [io.debezium.connector.common.BaseSourceTask:?]-Stopping down connector
+2023-11-06 10:12:20.485 INFO  debezium-mysqlconnector-my_mysql_connectordiffer-change-event-source-coordinator [io.debezium.pipeline.ChangeEventSourceCoordinator:?]-Finished streaming
+2023-11-06 10:12:20.485 INFO  blc-127.0.0.1:3306 [io.debezium.connector.mysql.MySqlStreamingChangeEventSource:?]-Stopped reading binlog after 0 events, last recorded offset: {transaction_id=null, ts_sec=1699236331, file=DESKTOP-CGPPAP1-bin.000015, pos=6650, server_id=1, event=1}
+2023-11-06 10:12:20.487 INFO  pool-6-thread-1 [io.debezium.jdbc.JdbcConnection:?]-Connection gracefully closed
+2023-11-06 10:12:20.493 INFO  pool-2-thread-1 [org.apache.kafka.connect.storage.FileOffsetBackingStore:?]-Stopped FileOffsetBackingStore

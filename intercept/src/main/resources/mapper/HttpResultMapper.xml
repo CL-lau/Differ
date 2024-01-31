@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.differ.repository.mapper.HttpResultMapper">
+
+    <resultMap id="HttpResultResultMap" type="com.differ.dto.HttpResult">
+        <result property="id" column="id"/>
+        <result property="statusCode" column="statusCode"/>
+        <result property="statusMessage" column="statusMessage"/>
+        <result property="url" column="url"/>
+        <result property="responseBody" column="responseBody"/>
+        <result property="requestUri" column="requestUri"/>
+        <result property="bodyType" column="bodyType" typeHandler="com.differ.entity.handler.typehandler.BodyTypeHandler"/>
+        <result property="requestType" column="requestType" typeHandler="com.differ.entity.handler.typehandler.RequestTypeHandler"/>
+        <result property="params" column="params" typeHandler="com.differ.entity.handler.typehandler.MapTypeHandler"/>
+        <result property="requestBody" column="requestBody"/>
+        <result property="dispatcherId" column="dispatcherId"/>
+        <result property="httpServiceEntityId" column="httpServiceEntityId"/>
+        <result property="resultFlag" column="resultFlag"/>
+        <result property="ctime" column="ctime"/>
+        <result property="utime" column="utime"/>
+    </resultMap>
+
+    <select id="selectHttpResultById" resultMap="HttpResultResultMap">
+        SELECT (statusCode, statusMessage, url, responseBody, requestUri, bodyType, requestType, params, requestBody, dispatcherId, httpServiceEntityId, resultFlag, ctime, utime)
+        FROM HttpResult WHERE id = #{id}
+    </select>
+
+    <insert id="insertHttpResult" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO HttpResult (statusCode, statusMessage, url, responseBody, requestUri, bodyType, requestType, params, requestBody, dispatcherId, httpServiceEntityId, resultFlag, ctime, utime)
+        VALUES (#{statusCode}, #{statusMessage}, #{url}, #{responseBody}, #{requestUri}, #{bodyType}, #{requestType}, #{params, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler}, #{requestBody,jdbcType=VARCHAR}, #{dispatcherId}, #{httpServiceEntityId}, #{resultFlag}, NOW(), NOW())
+    </insert>
+
+    <update id="updateHttpResult">
+        UPDATE HttpResult
+        <set>
+            <if test="statusCode != null">statusCode = #{statusCode},</if>
+            <if test="statusMessage != null">statusMessage = #{statusMessage},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="responseBody != null">responseBody = #{responseBody},</if>
+            <if test="requestUri != null">requestUri = #{requestUri},</if>
+            <if test="bodyType != null">bodyType = #{bodyType},</if>
+            <if test="requestType != null">requestType = #{requestType},</if>
+            <if test="params != null">params = #{params, typeHandler=com.differ.entity.handler.typehandler.MapTypeHandler},</if>
+            <if test="requestBody != null">requestBody = #{requestBody},</if>
+            <if test="dispatcherId != null">dispatcherId = #{dispatcherId},</if>
+            <if test="httpServiceEntityId != null">httpServiceEntityId = #{httpServiceEntityId},</if>
+            <if test="resultFlag != null">resultFlag = #{resultFlag},</if>
+            utime = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteHttpResultById">
+        DELETE FROM HttpResult WHERE id = #{id}
+    </delete>
+
+</mapper>

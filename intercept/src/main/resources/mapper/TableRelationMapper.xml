@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.differ.repository.mapper.TableRelationMapper">
+
+    <resultMap id="TableRelationResultMap" type="com.differ.dto.TableRelation">
+        <result property="id" column="id"/>
+        <result property="flag" column="flag"/>
+        <result property="values" column="values"/>
+        <result property="tables" column="tables"/>
+    </resultMap>
+
+    <select id="selectTableRelationById" resultMap="TableRelationResultMap">
+        SELECT * FROM TableRelation WHERE id = #{id}
+    </select>
+
+    <insert id="insertTableRelation">
+        INSERT INTO TableRelation (id, flag, values, tables) VALUES (#{id}, #{flag}, #{values}, #{tables})
+    </insert>
+
+    <update id="updateTableRelation">
+        UPDATE TableRelation SET flag = #{flag}, values = #{values}, tables = #{tables} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteTableRelationById">
+        DELETE FROM TableRelation WHERE id = #{id}
+    </delete>
+
+</mapper>
